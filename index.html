@@ -1,0 +1,61 @@
+<!-- German Javier 2025  -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Juego de Trivia</title>
+<link rel="stylesheet" href="css/styles.css" />
+
+</head>
+<body>
+  <div id="app" role="main" aria-live="polite">
+    <h1>Juego de Trivia</h1>
+
+    <section id="welcome-screen">
+      <p>¿Quieres jugar al juego de trivia?</p>
+      <div style="display:flex; gap:16px; justify-content:center;">
+        <button id="start-yes" aria-label="Sí, empezar juego">Sí</button>
+        <button id="start-no" aria-label="No, salir">No</button>
+      </div>
+    </section>
+
+    <section id="player-info" class="hidden" aria-label="Ingreso de nombre">
+      <label for="player-name">Por favor, ingresa tu nombre:</label>
+      <input id="player-name" name="player-name" type="text" aria-required="true" aria-describedby="name-validation" placeholder="Tu nombre" />
+      <div id="name-validation" style="color:#e74c3c; font-weight:600; height:18px; text-align:center;"></div>
+      <button id="submit-name" disabled>Comenzar Juego</button>
+    </section>
+
+    <!-- preguntas -->
+    <section id="question-screen" class="hidden" aria-live="assertive" aria-atomic="true" aria-label="Preguntas de trivia">
+      <div id="category-progress" aria-live="polite" aria-atomic="true"></div>
+      <h2 id="category-name"></h2>
+      <p id="question-text"></p>
+      <div id="answers-container" role="list"></div>
+      <button id="next-question" disabled aria-disabled="true" aria-label="Siguiente pregunta">Siguiente Pregunta</button>
+    </section>
+
+    <!-- pequeño resumen -->
+    <section id="summary" class="hidden" aria-label="Resumen del juego">
+      <h2>Resumen del Juego</h2>
+      <p id="player-summary"></p>
+      <p id="score-summary"></p>
+
+      <h3>Ranking (Mejores Jugadores)</h3>
+      <table>
+        <caption>Top 5 jugadores por respuestas correctas</caption>
+        <thead>
+          <tr><th>Puesto</th><th>Jugador</th><th>Correctas</th></tr>
+        </thead>
+        <tbody id="ranking-table-body"></tbody>
+      </table>
+
+      <button id="play-again" aria-label="Jugar de nuevo">Jugar de nuevo</button>
+    </section>
+  </div>
+  <script src="js/trivia.js" type=""></script>
+</body>
+</html>
+
